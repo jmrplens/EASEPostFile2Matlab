@@ -6,3 +6,6 @@ Para utilizar este programa en primer lugar se deben obtener las respuestas al i
 
 ### Uso 
 En el programa hacer clic en `Inicio->Importar TXT` y seleccionar todos los .txt, dependiendo de la cantidad y resolución de los archivos tardará desde unos segundos a varios minutos en importarlos. Una vez importados se pueden realizar representaciones y calculos de la teoría revisada corregida.
+
+
+**Para conocer en profundidad el concepto de la teoría revisada corregida dejo a disposición mi trabajo ubicado en el repositorio de una Universidad de Alicante <a href="https://rua.ua.es/dspace/handle/10045/77578">Leer</a>**
