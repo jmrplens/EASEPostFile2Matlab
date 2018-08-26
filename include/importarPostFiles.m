@@ -41,7 +41,7 @@ RuidoFondo = zeros(size(ListaArchivos,2),21);
 SPLFuente = zeros(size(ListaArchivos,2),21);
 handles.SPLm = cell(size(ListaArchivos,2),21);
 for i=1:size(ListaArchivos,2)
-    
+    multiWaitbar(handles,'Importando datos',i/size(ListaArchivos,2),'color','b');
     % Distancia entre receptores y fuente
     A = EASEPost2Distan(ListaArchivos{i});
     Distancia(i) = sqrt(...
@@ -116,11 +116,12 @@ for i=1:size(ListaArchivos,2)
     
 end
 
+multiWaitbar(handles,'Importando datos','Close');
 % En primer lugar agrupa los niveles en bloques de 1 milisegundo, ya que hay
 % varios niveles por milisegundo, y promedia los valores de cada bloque
 for i=1:numel(handles.SPLm(:,1))
     
-    
+    multiWaitbar(handles,'Procesando historias temporales',i/numel(handles.SPLm(:,1)),'color','r');
     for j=1:max(ceil(handles.SPLm{i,19}(:,1)))
         Ini = find(handles.SPLm{i,19}(:,1)>=j-1,1); % Inicio del bloque de 'j' milisegundos
         Fin = find(handles.SPLm{i,19}(:,1)>j,1)-1; % Fin del bloque de 'j' milisegundos
@@ -193,6 +194,7 @@ for i=1:numel(handles.SPLm(:,1))
     handles.SPLm{i,20} = ValMSoct;
     handles.SPLm{i,21} = ValMSthirdoct;
 end
+multiWaitbar(handles,'Procesando historias temporales','Close');
 % Obtener el tiempo maximo valor elegible para representacion. Obtiene el
 % maximo de cada receptor y despues busca el minimo entre estos.
 handles.MaxElegible = min(cell2mat(cellfun( @(val) numel(val), handles.SPLm(:,1),'UniformOutput',0)))-1;

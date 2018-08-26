@@ -1,6 +1,7 @@
 function representarSPLvsDist2(hObject,handles)
 
 axes(handles.plotfig)
+
 Rango = handles.Rango;
 SPLmTot = handles.SPLm(:,19); % Matriz con los rayos sin procesar
 SPLm = handles.SPLm(:,20); % Matriz con valores cada ms y por octavas
@@ -433,4 +434,7 @@ title({['SPL según rango de tiempo',sprintf(' - %d ms',Rango)];...
 
 hold off
 
+% Asegurar el tamaño y posicion del plot
+set(gca, 'units','normalized', 'outerposition',[-0.073 -0.027 0.753 1.028]);
+set(gca, 'units','normalized', 'position',[0.037 0.077 0.562 0.854]);
 

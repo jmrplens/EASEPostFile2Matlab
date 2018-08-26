@@ -418,4 +418,9 @@ title({['SPL según rango de tiempo',sprintf(' - %d ms',Rango)];...
 
 hold off
 
-
+% Asegurar el tamaño y posicion del plot
+set(gca, 'units','normalized', 'outerposition',[-0.073 -0.027 0.753 1.028]);
+set(gca, 'units','normalized', 'position',[0.037 0.077 0.422 0.854]);
+if get(handles.teoriacorregida,'value')==1
+set(gca, 'units','normalized', 'position',[0.037 0.077 0.362 0.854]);    
+end
